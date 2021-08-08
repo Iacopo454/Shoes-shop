@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_hello.jpg') no-repeat center center fixed;
+    background: url('/media/hello.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -37,13 +37,28 @@ body {
     background: black;
     color: white;
 }
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    color: #2a8bec;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
+
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
 }
 
 .text-black {
@@ -81,7 +96,9 @@ a.category-badge > span.badge:hover {
     right: 10px;
 }
 
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item {
     cursor: pointer;
 }
 
