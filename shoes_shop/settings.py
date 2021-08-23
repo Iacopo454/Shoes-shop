@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY= os.getenv('SECRET_KEY','')
+SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -172,8 +172,4 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-
-
-
-# STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', 'pk_test_51JMDCRCrm7XTEgfUKAhGyunofmu0CyXR6KBOX2DjXB82eJQDb5cHD1BzKFXW8lQ0OG9hOxInqPMUnfWBoYKNXYmT00SEmMMShG')
-# STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51JMDCRCrm7XTEgfUsz6mr0MR4MmayiQjhe3FfmFaCG6bf1eZEtb1F1yr8MhRoc6b0TVDqgFeQOg1O7ubfvy09Rgz00SwpZmH5j')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
