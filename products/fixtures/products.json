@@ -16,26 +16,26 @@
     "model": "products.product",
     "fields": {
         "sku": "pp5001600425",
-        "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants",
-        "description": "Straight-leg styling and on-the-job comfort make our Audra pants a flattering business decision. flat front zip fly with hook-and-bar closure 2 front and 2 back welt pockets 34 1/2\" inseam polyester/rayon/spandex washable imported",
+        "name": "Jordan Model",
+        "description": "Basket model",
         "price": 58.99,
-        "category": 4,
+        "category": 1,
         "rating": 4.6,
-        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-        "image": "DP0113201617034987M.jpg"
+        "image_url": "http:jordan.jpg",
+        "image": "jordan.jpg"
     }
 }, {
     "pk": 3,
     "model": "products.product",
     "fields": {
-        "sku": "pp5001730010",
-        "name": "Royal Velvet Matte Satin Square 3-pc. Coverlet Set",
-        "description": "Add a 5-star resort feel to your bedroom with the elegant Matte Satin Square coverlet set, featuring modern embroidered squares and flanged trim.  square embroidered pattern flanged-edge trim fabric is washable for easy care 3-piece set includes: coverlet 2 shams Polyester coverlet with cotton fill; polyester shams. Washable. Imported. Full/Queen: coverlet is 92x96\" King: coverlet is 110x96\"",
-        "price": 205.99,
-        "category": 2,
+        "sku": "",
+        "name": "Nike Ali",
+        "description": "New model",
+        "price": 120.50,
+        "category": 1,
         "rating": 4.7,
-        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP1230201417013175M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
-        "image": "DP1230201417013175M.jpg"
+        "image_url": "http://nike-ali.jpg",
+        "image": "nike-ali.jpg"
     }
  
 }]
