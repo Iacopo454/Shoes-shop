@@ -2,15 +2,15 @@
     "pk": 1,
     "model": "products.category",
     "fields": {
-        "name": "men",
-        "friendly_name": "men_shoes"
+        "name": "boy_shoes",
+        "friendly_name": "Boy shoes"
     }
 }, {
     "pk": 2,
     "model": "products.category",
     "fields": {
-        "name": "boy",
-        "friendly_name": "boy_shoes"
+        "name": "boy_shoes",
+        "friendly_name": "Boy shoes"
     }
 
 }]

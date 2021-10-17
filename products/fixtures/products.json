@@ -3,10 +3,10 @@
     "model": "products.product",
     "fields": {
         "sku": "pp5001340155",
-        "name": "Jack-Redgate",
+        "name": "boy_shoes",
         "description": "Comfy men shoes",
         "price": 45,
-        "category": 1,
+        "category": 2,
         "rating": 4.6,
         "image_url": "http://jack-redgate",
         "image": "jack-redgate.jpg"
@@ -16,7 +16,7 @@
     "model": "products.product",
     "fields": {
         "sku": "pp5001600425",
-        "name": "Jordan Model",
+        "name": "boy_shoes",
         "description": "Basket model",
         "price": 58.99,
         "category": 1,
@@ -29,7 +29,7 @@
     "model": "products.product",
     "fields": {
         "sku": "pp12345",
-        "name": "Nike Ali",
+        "name": "boy_shoes",
         "description": "New model",
         "price": 120.50,
         "category": 1,
