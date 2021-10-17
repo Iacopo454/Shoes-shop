@@ -4,7 +4,7 @@
     "fields": {
         "sku": "pp5001340155",
         "name": "Jack-Redgate",
-        "description": "Comfy man shoes",
+        "description": "Comfy men shoes",
         "price": 45,
         "category": 1,
         "rating": 4.6,
@@ -28,7 +28,7 @@
     "pk": 2,
     "model": "products.product",
     "fields": {
-        "sku": "",
+        "sku": "pp12345",
         "name": "Nike Ali",
         "description": "New model",
         "price": 120.50,
