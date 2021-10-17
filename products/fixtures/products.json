@@ -25,7 +25,7 @@
         "image": "jordan.jpg"
     }
 }, {
-    "pk": 3,
+    "pk": 2,
     "model": "products.product",
     "fields": {
         "sku": "",
@@ -39,3 +39,4 @@
     }
  
 }]
+
