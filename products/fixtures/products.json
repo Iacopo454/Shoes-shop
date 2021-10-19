@@ -25,11 +25,11 @@
         "image": "jordan.jpg"
     }
 }, {
-    "pk": 2,
+    "pk": 3,
     "model": "products.product",
     "fields": {
         "sku": "pp12345",
-        "name": "boy_shoes",
+        "name": "men_shoes",
         "description": "New model",
         "price": 120.50,
         "category": 1,

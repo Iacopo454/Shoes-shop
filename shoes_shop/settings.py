@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    "wishlist",
-
+    'wishlist',
+    'reviews',
     # Other
     'crispy_forms',
     'storages'
@@ -134,6 +134,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
 
 
 # Password validation

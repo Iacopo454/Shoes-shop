@@ -12,5 +12,11 @@
         "name": "boy_shoes",
         "friendly_name": "Boy shoes"
     }
-
+}, {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+        "name": "men_shoes",
+        "friendly_name": "Boy shoes"
+    }
 }]
