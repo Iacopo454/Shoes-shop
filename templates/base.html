@@ -1,78 +1,53 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
+  <head>
 
-<head>
-    <!-- Required meta tags -->
     {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
     {% block extra_meta %}
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico" />
-    <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico" />
     {% endblock %}
 
-
     {% block corecss %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
-
     {% block corejs %}
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/bac4c8c9d6.js" crossorigin="anonymous"></script>
-    <!-- JavaScript - jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- JavaScript - Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <!-- Stripe -->
-    <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- Stripe -->
+        <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
 
-    <title>Easy Skincare {% block extra_title %}{% endblock %}</title>
-</head>
-
-<body>
-    <!-- Main header devided on sections - code snippet from Bootstrap and Boutique Ado by CI -->
+    <title>Shoes Shop {% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
-            <!--Brand name with logo and home link -->
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><img src="{{ MEDIA_URL }}logo.jpg" width="50" height="50"
-                            class="border border-black" alt="">
-                        <strong>My Shoes shop</strong></h2>
+                    <h2 class="logo-font text-black my-0"><strong>Shoes</strong> Shop</h2>
                 </a>
             </div>
-            <!-- Search bar for products-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q"
-                            placeholder="Search for product">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                 <span class="icon">
@@ -83,12 +58,10 @@
                     </div>
                 </form>
             </div>
-            <!-- Account, wishlist, shopping bag links -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
@@ -96,35 +69,26 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                            {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="nav-link text-black" href="{% url 'wishlist' %}">
-                            <div class="text-center">
-                                <div><i class="fas fa-heart fa-lg"></i></div>
-                                <p class="my-0">Wishlist</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-light font-weight-bold{% else %}text-black{% endif %} nav-link"
-                            href="{% url 'view_bag' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">My Bag
+                                <p class="my-0">
                                     {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                        ${{ grand_total|floatformat:2 }}
                                     {% else %}
-                                    $0.00
+                                        $0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -133,96 +97,52 @@
                 </ul>
             </div>
         </div>
-        <!-- Navigation -->
-        <div class="row">
+        <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <!-- Shipping banner -->
         <div id="delivery-banner" class="row text-center">
-            <div class="col text-white">
-                <h4 class="logo-font my-1"><i class="fas fa-shipping-fast"></i> Free shipping on orders over
-                    ${{ free_delivery_threshold }}!</h4>
-            </div>
+            <div class="col bg-black text-white">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+            </div>            
         </div>
     </header>
-    <!-- Toast messages -->
-    {% if messages %}
-    <div class="message-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-        {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-        {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
-    </div>
-    {% endif %}
 
+    {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    {% endif %}
 
     {% block page_header %}
     {% endblock %}
 
-    <div class="content">
-        {% block content %}
-        {% endblock %}
-    </div>
-
-    <!-- Footer with social media icons and links, disclaimer and copyright -->
-    <footer class="container-fluid" id="footer">
-        <hr style="height:2px;border-width:0;color:#a3171e;background-color: #d069ca">
-        <div class="row d-flex justify-content-center text-center">
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="https://www.facebook.com/" class="text-white" target="_blank">
-                        <i class="fab fa-facebook-square fa-2x" style="color: #868dec;"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.instagram.com/" class="text-white me-4" target="_blank">
-                        <i class="fab fa-instagram-square fa-2x" style="color: #6066b6;"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.linkedin.com/" class="text-white me-4" target="_blank">
-                        <i class="fab fa-linkedin fa-2x" style="color: #868dec;"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="mailto:easyskincare@example.com" class="text-white me-4" target="_blank">
-                        <i class="fas fa-envelope-square fa-2x" style="color: #4b52b4;"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="row d-flex justify-content-center text-center text-white">
-            <p class="text-muted">
-                * This site is made for educational purposes only, all roots of information and visualization are
-                shown in the documentation, no commercial or monetary benefits are taken.
-            </p>
-        </div>
-        <div class="row d-flex justify-content-center text-center text-white">
-            <p style="color: #868dec;">&copy; MC ❁ 2021</p>
-        </div>
-    </footer>
+    {% block content %}
+    {% endblock %}
 
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
     {% endblock %}
-</body>
 
+    
+  </body>
 </html>
