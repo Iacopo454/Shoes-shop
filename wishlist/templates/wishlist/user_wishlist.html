@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">My Wishlist</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="text-muted">Manage your Wishlist</p>
+                {% if user_wishlist %}
+                    {% for product in user_wishlist %}
+                    <div class="row">
+                        <div class="col-md-2">
+                            {% if product.product.image %}
+                                <a href="{% url 'product_detail' product.product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'product_detail' product.product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.product.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.product}}</h5>
+                                <p class="lead mb-0 text-left font-weight-bold">${{ product.product.price }}</p>
+                                {% if product.product.category %}
+                                <p class="small mt-1 mb-0">
+                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.product.category.name }}">
+                                        <i class="fas fa-tag mr-1"></i>{{ product.product.category.friendly_name }}
+                                    </a>
+                                </p>
+                                {% endif %}
+                                <p class="small mt-1 mb-0">
+                                {% if product.product.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.product.rating }} / 5</small>
+                                {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                {% endif %}
+                                </p>
+                                <br>
+                                <a type="button" class="btn btn-outline-black rounded-0 fw500 btn-sm" href="{% url 'wishlist:add_to_wishlist' product.product.id %}">Remove from Wishlist</a>
+                            </div>
+                        </div>
+                    </div>                
+                    {% endfor %}
+                {% else %}
+                <p class="card-text">No products have been added to your wishlist yet</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

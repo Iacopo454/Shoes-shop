@@ -291,3 +291,9 @@ input[name='q']::placeholder {
         height: calc(100vh - 116px);
     }
 }
+
+/* wishlist button border remove */
+.wishlist_btn:focus {
+    outline: none;
+    box-shadow: none;
+  }

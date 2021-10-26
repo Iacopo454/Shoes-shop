@@ -64,8 +64,16 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    # check the product for the requested user exists or not
+    wishlist = False
+    if request.user.is_authenticated:
+        user_wishlist = product.wishlist_product.filter(user=request.user)
+        if user_wishlist.exists():
+            wishlist = True
+
     context = {
         'product': product,
+        'wishlist': wishlist,
     }
 
     return render(request, 'products/product_detail.html', context)

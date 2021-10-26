@@ -101,6 +101,17 @@
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+
+                                <a href="{% url 'wishlist:add_to_wishlist' product.id %}" class="btn btn-lg mt-5 wishlist_btn" style="font-size: 2rem">
+                                    <span class="icon">
+                                        {% if wishlist %}
+                                        <i class="fas fa-heart"></i>
+                                        {% else %}
+                                        <i class="far fa-heart"></i>
+                                        {% endif %}
+                                    </span>
+                                </a>
+
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
