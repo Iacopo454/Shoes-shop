@@ -379,6 +379,6 @@ input[name='q']::placeholder {
         color: #fff;
     }
 
-    .overlay + .container-fluid{
+    .overlay + .container-fluid, .overlay + .container{
         min-height: 350px;
     }
