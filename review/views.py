@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order, OrderLineItem
 from review.models import ReviewRating
-from products.models import Product
+from products.models import Product, Category
 
 from review.forms import ReviewForm
 
@@ -15,14 +15,14 @@ def order_view(request):
     """Show all orders for the requested user"""
 
     orders = Order.objects.filter(user_profile__user=request.user).order_by('-id')
-    return render(request, "review/order_list.html", {"orders": orders})
+    return render(request, "review/order_list.html", {"orders": orders, 'categories': Category.objects.all()})
 
 @login_required
 def order_details(request, order_number):
     """A view to show the details of a specific order"""
 
     order_item = OrderLineItem.objects.filter(order__order_number=order_number, order__user_profile__user=request.user)
-    return render(request, "review/order_details.html", {"order_item": order_item})
+    return render(request, "review/order_details.html", {"order_item": order_item, 'categories': Category.objects.all()})
 
 @login_required
 def submit_review(request):

@@ -53,6 +53,7 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'categories': Category.objects.all(),
         'current_categories': categories,
         'current_sorting': current_sorting,
     }
@@ -77,6 +78,7 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
+        'categories': Category.objects.all(),
         'wishlist': wishlist,
         'total_review': reviews.count(),
         'reviews': reviews,
@@ -106,6 +108,7 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'categories': Category.objects.all(),
     }
 
     return render(request, template, context)
@@ -135,6 +138,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'categories': Category.objects.all(),
     }
 
     return render(request, template, context)

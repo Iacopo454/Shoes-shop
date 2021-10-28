@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
+from products.models import Category
 
 # Create your views here.
 def index(request):
@@ -8,4 +9,4 @@ def index(request):
     print(check)
     print("testing")
 
-    return render(request, 'home/index.html')
+    return render(request, 'home/index.html', {'categories': Category.objects.all()})

@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from products.models import Product
+from products.models import Product, Category
 from wishlist.models import UserWishlist
 
 
@@ -10,7 +10,7 @@ from wishlist.models import UserWishlist
 def wishlist_view(request):
     """Show all product of wishlist for the requested user"""
     user_wishlist = UserWishlist.objects.filter(user=request.user)
-    return render(request, "wishlist/user_wishlist.html", {"user_wishlist": user_wishlist})
+    return render(request, "wishlist/user_wishlist.html", {"user_wishlist": user_wishlist, 'categories': Category.objects.all()})
 
 @login_required
 def add_to_wishlist(request, product_id):
