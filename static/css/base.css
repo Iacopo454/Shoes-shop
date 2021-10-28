@@ -378,3 +378,7 @@ input[name='q']::placeholder {
     footer.page-footer a {
         color: #fff;
     }
+
+    .overlay + .container-fluid{
+        min-height: 350px;
+    }
