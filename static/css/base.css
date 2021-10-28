@@ -312,3 +312,8 @@ input[name='q']::placeholder {
   .review{
       color: #000;
   }
+
+  .card-img-top{
+      width: 200px;
+      height: 200px;
+  }
