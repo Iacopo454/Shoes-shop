@@ -1,5 +1,10 @@
 {% extends "base.html" %}
+{% load tag_library %}
 {% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
+{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -120,6 +125,39 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2">
+                <h4 class="review-header">Reviews ({{total_review}})</h4>
+                <hr>
+                <div class="review-body">
+                    <ul class="list-group list-group-flush">
+                        {% for review in reviews %}
+                        <li class="list-group-item">
+                            <div class="row d-flex">
+                                <div class="review-pic">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <p class='p-2'>{{review.order_item.order.full_name}}</p>
+                                <p class="grey-text p-2">{{review.created_at}}</p>
+                                <div class="p-2 ml-auto">
+                                    <span class="fa fa-star {% if review.rating|to_int >= 1 %}review_checked {% endif %}"></span>
+                                    <span class="fa fa-star {% if review.rating|to_int >= 2 %}review_checked {% endif %}"></span>
+                                    <span class="fa fa-star {% if review.rating|to_int >= 3 %}review_checked {% endif %}"></span>
+                                    <span class="fa fa-star {% if review.rating|to_int >= 4 %}review_checked {% endif %}"></span>
+                                    <span class="fa fa-star {% if review.rating|to_int >= 5 %}review_checked {% endif %}"></span>
+                                </div>
+                            </div>
+
+                            <div class="row ml-3">
+                                <p class='review'>{{review.review}}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
     </div>
 {% endblock %}
 

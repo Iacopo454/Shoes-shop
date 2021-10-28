@@ -279,6 +279,7 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 164px;
     }
+
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -290,10 +291,24 @@ input[name='q']::placeholder {
     body {
         height: calc(100vh - 116px);
     }
+    
+    .custom-btn{
+        margin-bottom: 24px;
+    }
 }
 
 /* wishlist button border remove */
 .wishlist_btn:focus {
     outline: none;
     box-shadow: none;
+  }
+
+  /* review section */
+  .review-pic{
+      font-size: 1.5rem;
+      padding-right: 10px;
+  }
+
+  .review{
+      color: #000;
   }

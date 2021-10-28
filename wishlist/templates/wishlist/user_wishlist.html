@@ -36,7 +36,7 @@
                                 </a>
                             {% endif %}
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-7">
                             <div class="card-body">
                                 <h5 class="card-title">{{product.product}}</h5>
                                 <p class="lead mb-0 text-left font-weight-bold">${{ product.product.price }}</p>
@@ -54,9 +54,10 @@
                                     <small class="text-muted">No Rating</small>
                                 {% endif %}
                                 </p>
-                                <br>
-                                <a type="button" class="btn btn-outline-black rounded-0 fw500 btn-sm" href="{% url 'wishlist:add_to_wishlist' product.product.id %}">Remove from Wishlist</a>
                             </div>
+                        </div>
+                        <div class="col-md-3">
+                            <a type="button" class="btn btn-outline-black rounded-0 fw500 btn-sm custom-btn" href="{% url 'wishlist:add_to_wishlist' product.product.id %}">Remove from Wishlist</a>
                         </div>
                     </div>                
                     {% endfor %}

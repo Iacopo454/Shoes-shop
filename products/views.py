@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
+from review.models import ReviewRating
 
 # Create your views here.
 
@@ -64,16 +65,21 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    # check the product for the requested user exists or not
+    # check the product for the requested user wishlist exists or not
     wishlist = False
     if request.user.is_authenticated:
         user_wishlist = product.wishlist_product.filter(user=request.user)
         if user_wishlist.exists():
             wishlist = True
 
+    # get reviews
+    reviews = ReviewRating.objects.filter(order_item__product=product)
+
     context = {
         'product': product,
         'wishlist': wishlist,
+        'total_review': reviews.count(),
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
