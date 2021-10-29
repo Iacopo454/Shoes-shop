@@ -1,104 +1,131 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# SHOES SHOP
+> This project is an e-commerce website created to advert and sell shoes. The user can easily register and use the platform to buy shoes, create his own favourite wish list and give also a feedback to the seller after buying an item using the review and rating functionality provided.
+The user receive also a confirmation email after registering for the first time, and after submitting any order request, this using Gmail account and deployment in Heroku.
+The user can choose from 5 different categories of shoes and can easily buy any item available using the stripe payment gateway system.
 
-Welcome Iacopo454,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+## Table of Contents
+* [Technologies](#technologies)
+* [Features](#features)
+* [Database](#database)
+* [Testing](#testing)
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Technologies
+### Languages
+* [HTML5](#https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](#https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](#https://en.wikipedia.org/wiki/JavaScript)
+* [Python3](#https://www.python.org/)
 
-`python3 -m http.server`
+### Frameworks and Libraries
+* [Django](#https://www.djangoproject.com/)
+* [Pip3](#https://pip.pypa.io/en/stable/)
+* [jQuery](#https://jquery.com/)
+* [FontAwesome](#https://fontawesome.com/)
+* [Bootstrap](#https://getbootstrap.com/)
 
-A blue button should appear to click: _Make Public_,
+### Others
+* [Heroku](#https://id.heroku.com/login) used to deploy live site.
+* [Stripe](#https://stripe.com/en-ie) used for the payments system.
+* [AWS](#https://aws.amazon.com/) used for file storage.
+* [GitHub](#https://github.com/) used to host repository.
+* [GitPod](#https://www.gitpod.io/) used to develop project and organise version control.
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Features
+### Wishlist page
+One logged-in user can save his favourite products on his wishlist page.
+On the wishlist page, the user can view:
+- List of products of his favorite.
+- By click remove button, one can remove the product from his wishlist.
 
-A blue button should appear to click: _Make Public_,
+### Orders page
+On the orders page, the user can view the list of all his own orders.
 
-Another blue button should appear to click: _Open Browser_.
+### Order details page
+On the order details page, the user can view:
+- List all his purchased products for a specific order.
+- Review form for feedback.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Review
+One user can give feedback and rate for a product of his purchased product.
+The rating and feedback will be shown on the product details page.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Database
+Two relational databases were used to create this site - during development SQLite was used and then Postgres was used for the production on Heroku. Below is an image of ERD how the database models relate to each other:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<img alt="ERD" src="docs/ERD.png" width="700">
 
-------
 
-## Release History
+## Testing
+### Testing from user stories
+#### As an unregistered, I want to 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  + *be able to browse through all products available.*
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+All users, regardless of registered/logged in status, can browse through all products, add to bag and make a purchase:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<img alt="Unregistered user story" src="docs/user-stories/unregistered-01.jpg" width="700">
 
 ---
 
-Happy coding!
+  + *have the ability browse through the categories on the site.*
+
+All users, regardless of registered/logged in status, can browse through the listed categories:
+
+<img alt="Unregistered user story" src="docs/user-stories/unregistered-02.jpg" width="700">
+
+---
+
+  + *have the ability to show details of a specific product on the site.*
+
+All users, regardless of registered/logged in status, can see the products details: 
+
+<img alt="Unregistered user story" src="docs/user-stories/unregistered-03.jpg" width="700">
+
+---
+
+  + *have the ability to see the reviews of a product details page.*
+
+All users, regardless of registered/logged in status, can see the reviews of a specific product: 
+
+<img alt="Unregistered user story" src="docs/user-stories/unregistered-04.jpg" width="700">
+
+---
+
+
+#### As an registered user, I want to 
+
+  + *be able to create wishlist of my favourite products.*
+
+An authenticated user, can add their favourite products in their wishlist:
+
+<img alt="Registered user story" src="docs/user-stories/registered-01.jpg" width="700">
+
+---
+
+  + *have the ability browse through the 'My Wishlist' menu on the site.*
+
+An authenticated user, can see his wishlists products:
+
+<img alt="Registered user story" src="docs/user-stories/registered-02.jpg" width="700">
+
+---
+
+  + *have the ability browse through the 'My Orders' menu on the site.*
+
+An authenticated user, can see his all orders:
+
+<img alt="Registered user story" src="docs/user-stories/registered-03.jpg" width="700">
+
+---
+
++ *have the ability to see specific orders details with purchased products through click on view button.*
+
+An user, able to give feedback and rate the products from this page.
+
+<img alt="Registered user story" src="docs/user-stories/registered-04.jpg" width="700">
+
+---
