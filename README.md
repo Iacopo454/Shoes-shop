@@ -102,7 +102,7 @@ Two relational databases were used to create this site - during development SQLi
 * The app has been tested on different devices and browser (Google Chrome, Safari, Mozilla and Internet Explorer) and it has not shown anymore issues or errors in the functionalities implemented. The devices used for testing are the following: 
 a Macbook Air, an Highpone 8 and a Window computer. 
 * Testcase testing has been used for all the models: Products, Checkout, Wishlist and Review to make sure are working properly. 
-* 
+
 ### Testing from user stories
 #### As an unregistered, I want to 
 
