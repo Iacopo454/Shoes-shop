@@ -50,6 +50,15 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [GitHub](#https://github.com/) used to host repository. The project repository ling is (#https://github.com/Iacopo454/Shoes-shop/)
 * [GitPod](#https://www.gitpod.io/) used to develop project and organise version control.
 
+### Scope
+* Clean User Experience by using technologies mentioned in the introduction - HTML, CSS, JavaScript, Python + Django, Stripe, Heroku
+* Easy and intuitive navigation via the navbar with dropdown categories of products 
+* Interactive features for the users: buy button, wishlist, review, bag, account with profile, checkout and information about each product, like description, rating, price, image
+* Wishlist for creating favorite products list in and the possibility to give review for a product bought 
+* Secure log out feature to store data safely registering, sign in and loggin out
+* Footer with social media icons to link to Facebook, Instagram and Twitter
+
+
 ### Credits
 * Photos:
 All taken from https://shoppremiumoutlets.com/ (as mention the website it is not used for commectical purposes but only learning and educational)
@@ -174,6 +183,11 @@ An user, able to give feedback and rate the products from this page.
 * https://github.com/Iacopo454/Shoes-shop
 - Press Enter to create your local clone.
 - Create your own env.py file to store variables, and ensure this is listed in your .gitignore file to keep these from being displayed publicly
+
+## To Deploy the project in Heroku:
+* Create your account on Heroku here: https://signup.heroku.com/login
+* Create a new app on heroku:
+Go to: https://dashboard.heroku.com/apps select new, create new app from the dropdown menu on the right. Enter your app-name and region and click create app. Under deployment method, select github to activate automatic deployments from Git to Heroku. 
 
 ### Slack Community
 
