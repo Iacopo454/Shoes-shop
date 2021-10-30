@@ -9,7 +9,7 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 
 * The user can choose from 5 different categories of shoes: Men, Women, Kids, boy, girl and can easily buy any item available using the stripe payment gateway system in testing mode so not real payments. 
 * The user can create his own favourite item list using the Wishlist model created 
-* The user can also review and give a rating score for any product bought, please see below to better explanation of user stories. 
+* The user can also review and give a rating score for any product bought, please see below for better explanation of user stories. 
 * The project is designed to be compatible with all devices, from computer to mobile and Highpads. 
 
 
