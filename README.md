@@ -1,7 +1,16 @@
 # SHOES SHOP
-> This project is an e-commerce website created to advert and sell shoes. The user can easily register and use the platform to buy shoes, create his own favourite wish list and give also a feedback to the seller after buying an item using the review and rating functionality provided.
-The user receive also a confirmation email after registering for the first time, and after submitting any order request, this using Gmail account and deployment in Heroku.
-The user can choose from 5 different categories of shoes and can easily buy any item available using the stripe payment gateway system.
+> This project is an e-commerce website created to advert and sell shoes but only for learning purposes at the moment, so no commercial or business benefits are taken, in future with some changes this project could become potentially a real E-commerce website, implementing a real stripe Api for payments for example.(The Stripe functionality for payment implemented is in testin mode but it has the same functionality). 
+The user can easily register and use the platform to buy shoes (using testing mode), create his own favourite wish list and give also a feedback to the seller after registration using the signup form. 
+
+The user receive also a confirmation email after registering for the first time, and after submitting any order request, this functionality is working using the Gmail email account settings, generatig a password for the app. 
+The project has been develop in Gitpod and deployed in Heroku using also the S3 AWS Amazon free service to store the photos in a bucket for better performance and user experience. 
+
+### User Stories
+
+* The user can choose from 5 different categories of shoes: Men, Women, Kids, boy, girl and can easily buy any item available using the stripe payment gateway system in testing mode so not real payments. 
+* The user can create his own favourite item list using the Wishlist model created 
+* The user can also review and give a rating score for any product bought, please see below to better explanation of user stories. 
+* The project is designed to be compatible with all devices, from computer to mobile and Highpads. 
 
 
 ## Table of Contents
@@ -17,6 +26,15 @@ The user can choose from 5 different categories of shoes and can easily buy any 
 * [CSS3](#https://en.wikipedia.org/wiki/CSS)
 * [JavaScript](#https://en.wikipedia.org/wiki/JavaScript)
 * [Python3](#https://www.python.org/)
+* [Balsamiq Wireframes] used for the project draft 
+* [Python] validator (#http://pep8online.com/) very helpful to chech the identation
+* [CSS3] validator (#https://jigsaw.w3.org/css-validator/)
+* [Javascript] validator (#https://jshint.com/)
+* [w3schools] was used as a general source of knowledge
+* [Google Chrome Developer Tool] this built-in developer tool was used to inspect page elements and help debug issues
+* [Stackoverflow] was used as a general source of knowledge (#https://stackoverflow.com/)
+* [Json Formatter] was used as json file formatter and validator
+
 
 ### Frameworks and Libraries
 * [Django](#https://www.djangoproject.com/)
@@ -26,12 +44,21 @@ The user can choose from 5 different categories of shoes and can easily buy any 
 * [Bootstrap](#https://getbootstrap.com/)
 
 ### Others
-* [Heroku](#https://id.heroku.com/login) used to deploy live site.
-* [Stripe](#https://stripe.com/en-ie) used for the payments system.
+* [Heroku](#https://id.heroku.com/login) used to deploy live site. The live app is (#https://shoes-shop1985.herokuapp.com/)
+* [Stripe](#https://stripe.com/en-ie) used for the payments system, this software offers payment processing software and application programming interfaces for e-commerce websites and mobile applications
 * [AWS](#https://aws.amazon.com/) used for file storage.
-* [GitHub](#https://github.com/) used to host repository.
+* [GitHub](#https://github.com/) used to host repository. The project repository ling is (#https://github.com/Iacopo454/Shoes-shop/)
 * [GitPod](#https://www.gitpod.io/) used to develop project and organise version control.
 
+### Credits
+* Photos:
+All taken from https://shoppremiumoutlets.com/ (as mention the website it is not used for commectical purposes but only learning and educational)
+* Code: 
+Code inspiration for the whole project and code snippets for the fundamental base structure borrowed from "Boutique Ado" the walkthrough project of Code Institute for the MS4 
+* Code inspiration for Wishlist and Review model adapted after mentor sessions with my mentor Sandeep Aggarwal following similar implementation of the video-lesson in CI for creating models
+
+* Website type and purpose:
+The website is an E-commerce website for learning purposes only at the moment and following the requirements of the MS4 provided from Code institue.
 
 ## Features
 ### Wishlist page
@@ -52,6 +79,9 @@ On the order details page, the user can view:
 One user can give feedback and rate for a product of his purchased product.
 The rating and feedback will be shown on the product details page.
 
+### Tutorials
+- https://www.youtube.com/watch?v=YZvRrldjf1Y was used as a general source of knowledge.
+- Code institute video lessons on how to build an E-commerce website using Django, Python, Javascript, Html and CSS.
 
 ## Database
 Two relational databases were used to create this site - during development SQLite was used and then Postgres was used for the production on Heroku. Below is an image of ERD how the database models relate to each other:
@@ -60,6 +90,10 @@ Two relational databases were used to create this site - during development SQLi
 
 
 ## Testing
+* The app has been tested on different devices and browser (Google Chrome, Safari, Mozilla and Internet Explorer) and it has not shown anymore issues or errors in the functionalities implemented. The devices used for testing are the following: 
+a Macbook Air, an Highpone 8 and a Window computer. 
+* Testcase testing has been used for all the models: Products, Checkout, Wishlist and Review to make sure are working properly. 
+* 
 ### Testing from user stories
 #### As an unregistered, I want to 
 
@@ -129,3 +163,22 @@ An user, able to give feedback and rate the products from this page.
 <img alt="Registered user story" src="docs/user-stories/registered-04.jpg" width="700">
 
 ---
+
+#### To clone the code from GitHub:
+- On GitHub, navigate to the main page of the repository.
+- Above the list of files, click Code:
+- To clone the repository using HTTPS, click HTTPS under "Clone".
+- Open Git Bash.
+- Change the current working directory to the location where you want the cloned directory.
+- Type git clone, and then paste the URL you copied earlier: $ git clone
+* https://github.com/Iacopo454/Shoes-shop
+- Press Enter to create your local clone.
+- Create your own env.py file to store variables, and ensure this is listed in your .gitignore file to keep these from being displayed publicly
+
+### Slack Community
+
+* I resolved many issues encountered after searching on Slack in the Code Institute community.
+* I managed to solve error using Google and checking with the Tutor support team of Code Institute 
+
+## Acknowledgments
+I would like to thank the tutor from Code Institute which tutor me and help me throught this project difficulties, my mentor which has been patient and the Slack commumnity which not only provide helps with active users but it is often helpful with answer to previous frequent questions from anyone part of this community.   
