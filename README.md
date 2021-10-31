@@ -225,7 +225,7 @@ In terminal, for automated testing need to run the command:
   - test that specific fields are required. Otherwise an invalid form retun False
   - test that a valid form return True
 
-<img alt="Test case" src="docs/tests/test-01.jpg" width="700">
+<img alt="Test case" src="docs/tests/test-01.jpg" width="300">
 
 #### To clone the code from GitHub:
 - On GitHub, navigate to the main page of the repository.
