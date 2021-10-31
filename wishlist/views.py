@@ -16,10 +16,11 @@ def wishlist_view(request):
         "categories": Category.objects.all()
         })
 
+
 @login_required
 def add_to_wishlist(request, product_id):
     """A view to add or remove from wishlist"""
-    
+       
     product = get_object_or_404(Product, id=product_id) 
     user_wishlist = product.wishlist_product.filter(user=request.user) 
 

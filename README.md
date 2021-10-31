@@ -76,6 +76,16 @@ On the wishlist page, the user can view:
 - List of products of his favorite.
 - By click remove button, one can remove the product from his wishlist.
 
+When an user click on wishlist button from product details page, in the database stores data into the UserWishlist model.
+The fields are:
+- user
+- product
+- created_at
+
+In views.py file of wishlist app, by add_to_wishlist() responsible for deleting or adding a product on wishlist.
+<img alt="Add to Wishlist" src="docs/codes/code-01.jpg" width="700">
+
+
 ### Orders page
 On the orders page, the user can view the list of all his own orders.
 
@@ -87,6 +97,16 @@ On the order details page, the user can view:
 ### Review
 One user can give feedback and rate for a product of his purchased product.
 The rating and feedback will be shown on the product details page.
+
+When an user submit the review form, he need to rate the product by click on star icon and write the feedback in the text field.
+For store the review for a specific product, the models fields are:
+- order_item
+- rating
+- review
+- created_at
+
+When the user submits the review form, the form data is stored in the database, and same time for the specific product calculate the average rating that given by the users and save it into the product.
+<img alt="Add to Wishlist" src="docs/codes/code-02.jpg" width="700">
 
 ### Tutorials
 - https://www.youtube.com/watch?v=YZvRrldjf1Y was used as a general source of knowledge.
@@ -172,6 +192,39 @@ An user, able to give feedback and rate the products from this page.
 <img alt="Registered user story" src="docs/user-stories/registered-04.jpg" width="700">
 
 ---
+
+### Automated Testing
+Automated Unit Testing was carried out with Django testing tools and written to cover as much of the site as possible.
+In terminal, for automated testing need to run the command:
+    python3 manage.py test
+
+#### Wishlist App
+- Models
+  - test for storing wishlist products into the database
+
+- Views
+  - test that unauthorized users cannot see the wishlist page.
+  - test that unauthorized users cannot add product in wishlist.
+  - test a logged in user can see the wishlist page.
+  - test for authenticated user can add product in wishlist and agian redirect to the product details page.
+
+
+#### Review App
+- Models
+  - test for storing data for a review into the database
+
+- Views
+  - test that unauthorized users cannot see the orders list page.
+  - test that unauthorized users cannot view specific order details.
+  - test that unauthorized users cannot give any feedback. 
+  - test a logged in user can see the orders list page.
+  - test for authenticated user can view a specific order details.
+  - test for authenticated user can give feedback and rate the purchese product. Then redirect at order details page.
+
+- Forms
+  - test that specific fields are required. Otherwise an invalid form retun False
+  - test that a valid form return True
+
 
 #### To clone the code from GitHub:
 - On GitHub, navigate to the main page of the repository.
