@@ -1,0 +1,21 @@
+[{
+    "pk": 1,
+    "model": "checkout.order",
+    "fields": {
+        "order_number": "DFG465646",
+        "full_name": "Jimmy",
+        "email": "jimmy@gmail.com",
+        "grand_total": 449.95,
+        "date": "2021-09-02 17:31:40.701665"
+    }
+},{
+    "pk": 1,
+    "model": "checkout.OrderLineItem",
+    "fields": {
+        "order": "1",
+        "product": "1",
+        "quantity": "2",
+        "lineitem_total": "1"
+    }
+}
+]
