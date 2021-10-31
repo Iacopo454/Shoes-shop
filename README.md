@@ -196,7 +196,7 @@ An user, able to give feedback and rate the products from this page.
 ### Automated Testing
 Automated Unit Testing was carried out with Django testing tools and written to cover as much of the site as possible.
 In terminal, for automated testing need to run the command:
-    python3 manage.py test
+    `python3 manage.py test`
 
 #### Wishlist App
 - Models
@@ -225,6 +225,7 @@ In terminal, for automated testing need to run the command:
   - test that specific fields are required. Otherwise an invalid form retun False
   - test that a valid form return True
 
+<img alt="Test case" src="docs/tests/test-01.jpg" width="700">
 
 #### To clone the code from GitHub:
 - On GitHub, navigate to the main page of the repository.
