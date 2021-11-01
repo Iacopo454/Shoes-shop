@@ -77,14 +77,192 @@ On the wishlist page, the user can view:
 - List of products of his favorite.
 - By click remove button, one can remove the product from his wishlist.
 
-When an user click on wishlist button from product details page, in the database stores data into the UserWishlist model.
-The fields are:
-- user
-- product
-- created_at
+#### How create a wishlist app
+For wishlist functionality, I crate a separate `Wishlist` app. By `python3 manage.py startapp wishlist` is a script that will create the directories and files for wishlist. The directory structure which looks like this:
 
-In views.py file of wishlist app, by add_to_wishlist() responsible for deleting or adding a product on wishlist.
-<img alt="Add to Wishlist" src="docs/codes/code-01.jpg" width="700">
+```
+wishlist/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+```
+In the `settings.py` file, I need to add a refference of wishlist app in the `INSTALLED_APPS` settings.
+
+```
+INSTALLED_APPS = [
+    ....,
+    ....,
+    'wishlist',
+]
+```
+
+In the wishlist app, I have create a model: `UserWishlist` has a user, product, created_at fields. The user is associated with auth user model and the product is associated with product model.
+
+wishlist/models.py
+```
+from django.db import models
+from django.contrib.auth.models import User
+from products.models import Product
+
+
+class UserWishlist(models.Model):
+    """
+    A user wishlist model for storing user product wishlist
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='wishlist_product')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user} - {self.product}"
+```
+In the `UserWishlist` model:
+- `user` field that using `ForeignKey`. That tells Django the user field is related with auth user model.
+- `product` field that also using `ForeignKey`. That tells Django the product field is related with Product model.
+- `created_at` field datatype is `DateTImeField` for storing datetimes into the database. By `auto_now_add=True`, automatically set time when an user create a wishlist.
+
+For creating migrations file in `wishlist/migrations`, I run another command:
+```
+python3 manage.py makemigrations wishlist
+```
+
+Now, run migrate again to create the userwishlist model tables in the database: 
+```
+python3 manage.py migrate
+```
+
+In `products/templates/products/product_details.html` file, I have added a icon for add wishlist for specific product.
+```
+<a href="{% url 'wishlist:add_to_wishlist' product.id %}" class="btn btn-lg mt-5 wishlist_btn" style="font-size: 2rem">
+    <span class="icon">
+        <i class="fas fa-heart"></i>
+    </span>
+</a>
+```
+When click on the icon, its call the `add_to_wishlist` function with product id parameter.
+For urls, I have created `urls.py` file in wishlist app and added these new views:
+```
+from django.urls import path
+from . import views
+
+app_name = 'wishlist'
+
+urlpatterns = [
+    path('<int:product_id>/', views.add_to_wishlist, name='add_to_wishlist'),
+]
+```
+
+In `wishlist/views.py`:
+```
+@login_required
+def add_to_wishlist(request, product_id):
+    """A view to add or remove from wishlist"""
+       
+    product = get_object_or_404(Product, id=product_id) 
+    user_wishlist = product.wishlist_product.filter(user=request.user) 
+
+    if user_wishlist.exists():
+        user_wishlist.delete()
+        msg = f"{product} has been removed from your WishList"
+        messages.error(request, msg)
+    else:        
+        wishlist = UserWishlist(user=request.user, product=product)
+        wishlist.save()  
+        msg = f"Added {product} to your WishList"      
+        messages.success(request, msg)
+
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+```
+In the views, the `@login_required` decorators indicates that only authenticated use can access the function. In this function, `get_object_or_404` checks the prodcut for the passes product_id exists or not in product table. If it exists in product table, then again checks in the userwishlist table that for the requsted user the product exists or not.
+If in userwishlist the product id exists, then delete the row from table and pass a error message.
+Otherwise, the product_id and requested user_id save into the UserWishlist model table and pass a success message.
+
+By `HttpResponseRedirect` the function redirect to the `HTTP_REFERER` indicates value.
+
+In `products/templates/products/product_details.html` file, I have added a condition that if the product already exists in the wishlist, it'll show the `<i class="fas fa-heart"></i>` icon, otherwise it'll show `<i class="far fa-heart"></i>`. The codes are lool like:
+```
+<a href="{% url 'wishlist:add_to_wishlist' product.id %}" class="btn btn-lg mt-5 wishlist_btn" style="font-size: 2rem">
+    <span class="icon">
+        {% if wishlist %}
+        <i class="fas fa-heart"></i>
+        {% else %}
+        <i class="far fa-heart"></i>
+        {% endif %}
+    </span>
+</a>
+```
+And in the `products/views.py`, I added some codes for checking product has in wishlist or not when shows the specific product details page and pass the value with context.
+The `product_detail()` function, the extended codes are:
+```
+def product_detail(request, product_id):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    # check the product for the requested user wishlist exists or not
+    wishlist = False
+    if request.user.is_authenticated:
+        user_wishlist = product.wishlist_product.filter(user=request.user)
+        if user_wishlist.exists():
+            wishlist = True
+
+    context = {
+        'product': product,
+        'categories': Category.objects.all(),
+        'wishlist': wishlist,
+    }
+
+    return render(request, 'products/product_detail.html', context)
+```
+
+#### My Wishlist page
+In the `templates/base.html`, I have added a menu "My wishlist" in the `Accounts` drowdown. The menu is responsible for showing the list of specific user favourite products. The extened codes are:
+```
+<a href="{% url 'wishlist:index' %}" class="dropdown-item">My Wishlist</a>
+```
+
+When user click on the menu, the wishlist index path() are call the views for showing list.
+In wishlist/urls.py, I added another path:
+```
+urlpatterns = [
+    path('', views.wishlist_view, name='index'),
+    path('<int:product_id>/', views.add_to_wishlist, name='add_to_wishlist'),
+]
+```
+
+In wishlist/views.py, the wishlist_view function has been added:
+```
+@login_required
+def wishlist_view(request):
+    """Show all product of wishlist for the requested user"""
+
+    user_wishlist = UserWishlist.objects.filter(user=request.user)
+    return render(request, "wishlist/user_wishlist.html", {
+        "user_wishlist": user_wishlist, 
+        "categories": Category.objects.all()
+        })
+```
+In this code, `@login_required` indicates that only authenticated user can access the function.
+For the request user, get all objects from `UserWishlist` model tables and pass with render function.
+`Category.objects.all()` that gets all catgories from catgory tables for showing into the navbar.
+The render function return into a template `wishlist/user_wishlist.html`.
+
+In `wishlist/temlates/wishlist/user_wishlist.html`, if get the wishlist, it'll show the objects data by looping, otherwise it'll show `No products have been added to your wishlist yet`.
+In this page, by clicking `Remove from Wishlist` button, user can delete the product for his wishlist.
+
+For showing the wishlist model into the Django Administrator panel, need to register the userwishlist model in the admin file.
+In `wishlist/admin.py`, the codes looks like:
+```
+from django.contrib import admin
+from wishlist.models import UserWishlist
+
+admin.site.register(UserWishlist)
+```
 
 
 ### Orders page
