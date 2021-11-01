@@ -14,5 +14,4 @@ class ReviewFormTest(TestCase):
 
     def test_review_form_is_valid(self):
         form = ReviewForm(data={"order_item": "1", "rating": "5", "review": "Good product"})
-        print(form.errors)
         self.assertTrue(form.is_valid())
