@@ -70,7 +70,7 @@ body {
 }
 
 .bg-black {
-    background: #000 !important;
+    background:#ff754c !important;
 }
 
 .overlay {
@@ -324,7 +324,7 @@ input[name='q']::placeholder {
         color: #fff;
     }
     .special-color-dark {
-        background-color: #263238 !important;
+        background-color:#ff754c !important;
     }
 
     .font-small {
