@@ -19,7 +19,7 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [Features](#features)
 * [Database](#database)
 * [Testing](#testing)
-* [DeploymentandOthers] (#deploymentandothers)
+* [Deployment] (#deployment)
 
 
 ## Technologies
@@ -45,7 +45,8 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [FontAwesome](#https://fontawesome.com/)
 * [Bootstrap](#https://getbootstrap.com/)
 
-## Deployment and Others
+## Deployment 
+### Other technologies 
 * [Heroku](#https://id.heroku.com/login) used to deploy live site. The live app is (#https://shoes-shop1985.herokuapp.com/)
 * [Stripe](#https://stripe.com/en-ie) used for the payments system, this software offers payment processing software and application programming interfaces for e-commerce websites and mobile applications
 * [AWS](#https://aws.amazon.com/) used for file storage.
