@@ -13,6 +13,7 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [Scope](#scope)
 * [Credits](#credits)
 * [Features](#features)
+* [Error](#error)
 * [Testing](#testing)
 * [Acknowledgments](#Acknowledgments)
 
@@ -932,7 +933,12 @@ class ReviewFormTest(TestCase):
         form = ReviewForm(data={"order_item": "1", "rating": "5", "review": "Good product"})
         self.assertTrue(form.is_valid())
 ```
-
+## Error
+In order to open the project in development with the command "python3 manage.py runserver", the terminal need the following commnand: 
+- unset DATABASE_URL
+- unset PGHOSTADDR
+the error causing this issues is related to the boiler plate version provided from CI for the MS4 no anymore compatible with the Gitpod platform.
+I have been provided these two commands from the tutor in order to carry on the project.
 
 #### To clone the code from GitHub:
 - On GitHub, navigate to the main page of the repository.
@@ -951,9 +957,8 @@ class ReviewFormTest(TestCase):
 Go to: https://dashboard.heroku.com/apps select new, create new app from the dropdown menu on the right. Enter your app-name and region and click create app. Under deployment method, select github to activate automatic deployments from Git to Heroku. 
 
 ### Slack Community
-
 * I resolved many issues encountered after searching on Slack in the Code Institute community.
 * I managed to solve error using Google and checking with the Tutor support team of Code Institute 
 
 ## Acknowledgments
-I would like to thank the tutor from Code Institute which tutor me and help me throught this project difficulties, my mentor "Sandeep Aggraval" which has been patient and the Slack commumnity which not only provide helps with active users but it is often helpful with answer to previous frequent questions from anyone part of this community.   
+* I would like to thank the tutor from Code Institute which tutor me and help me throught this project difficulties, my mentor "Sandeep Aggraval" which has been patient and the Slack commumnity which not only provide helps with active users but it is often helpful with answer to previous frequent questions from anyone part of this community.   
