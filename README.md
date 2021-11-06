@@ -15,6 +15,7 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [Features](#features)
 * [Error](#error)
 * [Testing](#testing)
+* [Advises](#advises)
 * [Acknowledgments](#Acknowledgments)
 
 ### User Stories
@@ -50,8 +51,8 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [Bootstrap](#https://getbootstrap.com/)
 
 ## Deployment 
-* [Heroku](#https://id.heroku.com/login) used to deploy live site. The live app is (#https://shoes-shop1985.herokuapp.com/)
-* [GitHub](#https://github.com/) used to host repository. The project repository ling is (#https://github.com/Iacopo454/Shoes-shop/)
+* [Heroku](#https://id.heroku.com/login) used to deploy the live site. The live app is (#https://shoes-shop1985.herokuapp.com/) 
+* [GitHub](#https://github.com/) used to host repository. The project repository link is (#https://github.com/Iacopo454/Shoes-shop/)
 
 ## Others
 * [Stripe](#https://stripe.com/en-ie) used for the payments system, this software offers payment processing software and application programming interfaces for e-commerce websites and mobile applications
@@ -939,6 +940,14 @@ In order to open the project in development with the command "python3 manage.py 
 - unset PGHOSTADDR
 the error causing this issues is related to the boiler plate version provided from CI for the MS4 no anymore compatible with the Gitpod platform.
 I have been provided these two commands from the tutor in order to carry on the project.
+
+## Advises
+* It is important to create an env.py file to store our keys public and private using this syntax os.environ["SECRET_KEY"], os.environ["PUBLIC_KEY"] for Stripe too. 
+* It is very important to create an .gitignore file and make sure to include inside this file the env.py to avoid that other users can access our private keys and keep our informations safe.
+* It is very important to remember to change the DEBUG value inside the settings.py equal to False before submission or completing the project, furthermore the "DEVELOPMENT" variable inside the Heroku settings can be removed once completed the development. 
+* I advise to activate the automated deployment from GitHub once deployed the project from the "Deploy" section in Heroku. 
+* I advise also do not forget to run the relevant migrations commands when installing the other feature apps as I did a few times, otherwise you will experience errors and not the outcome expected. 
+
 
 #### To clone the code from GitHub:
 - On GitHub, navigate to the main page of the repository.
