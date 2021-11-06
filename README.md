@@ -1,9 +1,20 @@
 # SHOES SHOP
 > This project is an e-commerce website created to advert and sell shoes but only for learning purposes at the moment, so no commercial or business benefits are taken, in future with some changes this project could become potentially a real E-commerce website, implementing a real stripe Api for payments for example.(The Stripe functionality for payment implemented is in testing mode but it has the same functionality). 
 The user can easily register and use the platform to buy shoes (using testing mode), create his own favourite wish list and give also a feedback to the seller after registration using the review and rating product form. 
-
 The user receive also a confirmation email after registering for the first time, and after submitting any order request, this functionality is working using the Gmail email account settings, generatig a password for the app. 
 The project has been develop in Gitpod and deployed in Heroku using also the S3 AWS Amazon free service to store the photos in a bucket for better performance and user experience. 
+
+## Table of Contents
+* [Technologies](#technologies)
+* [Other-Technologies](#othertechnologies)
+* [Features](#features)
+* [Database](#database)
+* [Deployment](#deployment)
+* [Scope](#scope)
+* [Credits](#credits)
+* [Features](#features)
+* [Testing](#testing)
+* [Acknowledgments] (#Acknowledgments)
 
 ### User Stories
 
@@ -12,14 +23,6 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * The user can create his own favourite item list using the Wishlist model created 
 * The user can also review and give a rating score for any product bought, please see below for better explanation of user stories. 
 * The project is designed to be compatible with all devices, from computer to mobile and Highpads. 
-
-
-## Table of Contents
-* [Technologies](#technologies)
-* [Features](#features)
-* [Database](#database)
-* [Testing](#testing)
-* [Deployment](#deployment)
 
 
 ## Technologies
@@ -46,14 +49,14 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [Bootstrap](#https://getbootstrap.com/)
 
 ## Deployment 
-### Other technologies 
 * [Heroku](#https://id.heroku.com/login) used to deploy live site. The live app is (#https://shoes-shop1985.herokuapp.com/)
+* [GitHub](#https://github.com/) used to host repository. The project repository ling is (#https://github.com/Iacopo454/Shoes-shop/)
+### Other technologies 
 * [Stripe](#https://stripe.com/en-ie) used for the payments system, this software offers payment processing software and application programming interfaces for e-commerce websites and mobile applications
 * [AWS](#https://aws.amazon.com/) used for file storage.
-* [GitHub](#https://github.com/) used to host repository. The project repository ling is (#https://github.com/Iacopo454/Shoes-shop/)
 * [GitPod](#https://www.gitpod.io/) used to develop project and organise version control.
 
-### Scope
+## Scope
 * Clean User Experience by using technologies mentioned in the introduction - HTML, CSS, JavaScript, Python + Django, Stripe, Heroku
 * Easy and intuitive navigation via the navbar with dropdown categories of products 
 * Interactive features for the users: buy button, wishlist, review, bag, account with profile, checkout and information about each product, like description, rating, price, image
@@ -62,7 +65,7 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * Footer with social media icons to link to Facebook, Instagram and Twitter
 
 
-### Credits
+## Credits
 * Photos:
 All taken from https://shoppremiumoutlets.com/ (as mention the website it is not used for commectical purposes but only learning and educational)
 * Code: 
@@ -952,4 +955,4 @@ Go to: https://dashboard.heroku.com/apps select new, create new app from the dro
 * I managed to solve error using Google and checking with the Tutor support team of Code Institute 
 
 ## Acknowledgments
-I would like to thank the tutor from Code Institute which tutor me and help me throught this project difficulties, my mentor which has been patient and the Slack commumnity which not only provide helps with active users but it is often helpful with answer to previous frequent questions from anyone part of this community.   
+I would like to thank the tutor from Code Institute which tutor me and help me throught this project difficulties, my mentor "Sandeep Aggraval" which has been patient and the Slack commumnity which not only provide helps with active users but it is often helpful with answer to previous frequent questions from anyone part of this community.   
