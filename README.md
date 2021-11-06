@@ -19,7 +19,7 @@ The project has been develop in Gitpod and deployed in Heroku using also the S3 
 * [Features](#features)
 * [Database](#database)
 * [Testing](#testing)
-* [Deployment] (#deployment)
+* [Deployment](#deployment)
 
 
 ## Technologies
